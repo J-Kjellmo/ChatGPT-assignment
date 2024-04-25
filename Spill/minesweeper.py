@@ -54,7 +54,7 @@ class Minesweeper:
         os.system('cls' if os.name == 'nt' else 'clear')  # Clear terminal screen
         row_padding = ' ' if self.rows >= 10 else ''
         col_padding = ' ' if self.rows < 10 else '  '
-        print(row_padding + col_padding + '   ' + ' '.join([:str(i) for i in range(1, self.cols + 1)]))
+        print(row_padding + col_padding + '   ' + ' '.join([str(i) for i in range(1, self.cols + 1)]))
         print('  ' + (row_padding * 2) + '+-' * (self.cols + 1) + '+')
         for i in range(self.rows):
             row_display = []
