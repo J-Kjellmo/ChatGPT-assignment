@@ -3,18 +3,20 @@ function addItems() {
   var list = document.getElementById('itemList');
   var input = document.getElementById('input');
   
-  var hasSpecialCharacter = /[\W_]/.test(input.value);
+  var hasSpecialCharacter = /[\W_]/.test(input.value); // detection for special charaters provided by ChatGPT
 
   if (input.value == '' || hasSpecialCharacter) {
     input.value = 'Invalid!'
 
     setTimeout(function() {
       input.value = '';
-    }, 1000);
+    }, 1000); // wait solution provided by ChatGPT
   }
   else {
+    // space removing solution provided by ChatGPT
     var newInput = input.value.replace(/\s+/g, '');
-
+    
+    // div creation provided by ChatGPT
     item.innerHTML = `<p>${input.value}</p><button type="click" class="buttons" id="remove" onclick="filter(${newInput})">&#x2716</button>`
     item.id = `${newInput}`;
     item.classList.add("item")
@@ -61,6 +63,7 @@ function loadItems() {
   });
 }
 
+// initial filter code provided by ChatGPT, heavily modified
 function filter(id) {
   var item = document.getElementById(id);
   var storage = JSON.parse(localStorage.getItem('items')) || [];
